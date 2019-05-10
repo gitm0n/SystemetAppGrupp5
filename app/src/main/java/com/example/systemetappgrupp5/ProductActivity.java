@@ -25,7 +25,7 @@ public class ProductActivity extends AppCompatActivity {
 
     private void setViewText(int viewId, String label, String text) {
       TextView tv = findViewById(viewId);
-      tv.setText(Html.fromHtml("<b>"+label+"</b>: " + text));
+      tv.setText(Html.fromHtml("<b>"+label+"</b>:<br>" + text));
       Log.d(LOG_TAG, " * " + label + " | " + text);
     }
 
@@ -34,6 +34,8 @@ public class ProductActivity extends AppCompatActivity {
       setViewText(R.id.product_volume, "Volym", String.valueOf(product.volume()) + " ML");
       setViewText(R.id.product_alcohol, "Alkohol", String.valueOf(product.alcohol()) + " %");
       setViewText(R.id.product_price, "Pris", String.valueOf(product.price()) + " SEK");
+      setViewText(R.id.product_group, "Produktgrupp", ""+product.productGroup());
+      setViewText(R.id.product_nr, "Artikelnr", String.valueOf(product.nr()));
     }
 
   }
